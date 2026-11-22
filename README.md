@@ -4,7 +4,7 @@ A production-grade **double-entry ledger** for B2B marketplaces (think Uber / Wo
 split payments with exact penny allocation, idempotent webhook ingestion, PostgreSQL
 row-level-security multi-tenancy, immutable audit trail and PSP statement reconciliation.
 
-**Live demo:** _DEPLOYMENT_URL_
+**Live demo:** https://fintech-ledger-engine.vercel.app
 
 | | |
 |---|---|
@@ -43,7 +43,7 @@ Demo tenants (public sandbox keys; only SHA-256 hashes are stored):
 
 ```bash
 # Post a payment (split 75/22/3 for AdriaticRide); repeat it → 200 + idempotent-replayed
-curl -X POST $URL/api/v1/transactions \
+curl -X POST https://fintech-ledger-engine.vercel.app/api/v1/transactions \
   -H "Authorization: Bearer sk_demo_adriaticride_9c217e3d" \
   -H "Idempotency-Key: $(uuidgen)" \
   -H "Content-Type: application/json" \
